@@ -4,9 +4,10 @@ import Header from '../../components/Header';
 import SearchBar from '../../components/SearchBar';
 
 class App extends Component {
+  //getCountry is a method
   getCountry = (e) => {
     e.preventDefault();
-    console.log("It works!");
+    console.log("It is working!");
   }
 
   render() {
