@@ -5,7 +5,7 @@ class Header extends Component {
     render() {
         return (
             <div className={styles.header}>
-                <h1>This is the HEADER component</h1>
+                <h1>HEADER component aka Covid19 title</h1>
             </div>
         )
     }
