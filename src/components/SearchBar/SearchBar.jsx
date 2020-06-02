@@ -5,9 +5,13 @@ class SearchBar extends Component {
     render() {
         return (
             <div className={styles.searchbar}>
-                <input 
+                {/* <input 
                     placeholder="SEARCHBAR COMPONENT: Type country to search"
-                />
+                /> */}
+                <form onSubmit={this.props.getCountry}>
+                    <input type="text" name="country" placeholder="Find a country" />
+                    <button>Search</button>
+                </form>
             </div>
            
         )
