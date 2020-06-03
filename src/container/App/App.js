@@ -6,8 +6,9 @@ import SearchBar from '../../components/SearchBar';
 class App extends Component {
   //getCountry is a method
   getCountry = (e) => {
+    const country = e.target.elements.country.value;
     e.preventDefault();
-    console.log("It is working!");
+    console.log(country);
   }
 
   render() {
