@@ -9,7 +9,6 @@ class App extends Component {
     countries: []
   }
 
-
   //getCountry is a method
   getCountry = async (e) => {
     const country = e.target.elements.country.value;
@@ -29,6 +28,9 @@ class App extends Component {
       <div className={styles.app}>
         <Header />
         <SearchBar getCountry={this.getCountry} />
+        { this.state.countries.map((country) => {
+          return <p key={country.CountryCode}>{ country.Country }</p>
+        })}
         <h1>This is an H1 inside the App container</h1>
       </div>
     );
