@@ -33,14 +33,14 @@ class App extends Component {
     this.setState({ countries: data.Countries });
     console.log(this.state.countries);
 
-    for (let i = 0; i < data.Countries.length; i++) {
-      console.log(
-        data.Countries[i].Country,
-        data.Countries[i].NewDeaths,
-        data.Countries[i].NewConfirmed,
-        data.Countries[i].TotalDeaths)
-    };
-
+    // //this targets the specific data points from within the countries array and console logs
+    // for (let i = 0; i < data.Countries.length; i++) {
+    //   console.log(
+    //     data.Countries[i].Country,
+    //     data.Countries[i].NewDeaths,
+    //     data.Countries[i].NewConfirmed,
+    //     data.Countries[i].TotalDeaths)
+    // };
 
   }
 
@@ -57,11 +57,11 @@ class App extends Component {
 
         { this.state.countries.map((country) => {
             return (
-              <div className={styles.countryCard}>
+              <div className={styles.countryCard} key={country.CountryCode}>
                 <h2>{ country.Country }</h2>
-                <p>Daily deaths = { country.NewDeaths }</p>
-                <p>New confirmed cases = { country.NewConfirmed }</p>
-                <p>Total Covid deaths = { country.TotalDeaths }</p>
+                <p>Daily deaths: { country.NewDeaths }</p>
+                <p>New confirmed cases: { country.NewConfirmed }</p>
+                <p>Total Covid deaths: { country.TotalDeaths }</p>
               </div>
             )
           })
