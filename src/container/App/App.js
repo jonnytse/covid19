@@ -12,16 +12,16 @@ class App extends Component {
   }
 
   setSearchText = (event) => {
-    const searchText = event.target.value.toLowerCase();
+    const searchText = event.target.value;
     console.log(searchText);
-    this.setState({ searchText }, this.filteredCountry)
+    this.setState({ searchText: searchText }, this.filteredCountry)
   }
 
   filteredCountry = () => {
     let filteredCountry = this.state.countries.filter(country => {
       return country.Country.toLowerCase().includes(this.state.searchText.toLowerCase());
     });
-    this.setState({ filteredCountry});
+    this.setState({ filteredCountry: filteredCountry});
     console.log(filteredCountry);
   }
 
@@ -32,20 +32,41 @@ class App extends Component {
     // console.log(data.Countries); //this is the array
     this.setState({ countries: data.Countries });
     console.log(this.state.countries);
+
+    for (let i = 0; i < data.Countries.length; i++) {
+      console.log(
+        data.Countries[i].Country,
+        data.Countries[i].NewDeaths,
+        data.Countries[i].NewConfirmed,
+        data.Countries[i].TotalDeaths)
+    };
+
+
   }
 
   render() {
-    // console.log(this.SearchText);
     return ( 
       <div className={styles.app}>
         <Header />
         <SearchBar searchText={this.state.searchText} setSearchText={this.setSearchText} />
         <CountryList countryData={this.state.filteredCountry} />
-          {/* this outputs/displays the country list to the brower */}
-          { this.state.countries.map((country) => {
-          return <p key={country.CountryCode}>{ country.Country }</p>
-        })}
-        <h1>This is an H1 inside the App container</h1>
+
+          {/* this outputs/displays the country list to the brower, straight from the countries array in line 9 */}
+          {/* { this.state.countries.map((country) => {
+          return <p key={country.CountryCode}>{ country.Country }</p> */}
+
+        { this.state.countries.map((country) => {
+            return (
+              <div className={styles.countryCard}>
+                <h2>{ country.Country }</h2>
+                <p>Daily deaths = { country.NewDeaths }</p>
+                <p>New confirmed cases = { country.NewConfirmed }</p>
+                <p>Total Covid deaths = { country.TotalDeaths }</p>
+              </div>
+            )
+          })
+        }
+        {/* <h1>This is an H1 inside the App container</h1> */}
       </div>
     );
   }
