@@ -13,6 +13,7 @@ class App extends Component {
 
   setSearchText = (event) => {
     const searchText = event.target.value.toLowerCase();
+    console.log(searchText);
     this.setState({ searchText }, this.filteredCountry)
   }
 
@@ -21,6 +22,7 @@ class App extends Component {
       return country.Country.toLowerCase().includes(this.state.searchText.toLowerCase());
     });
     this.setState({ filteredCountry});
+    console.log(filteredCountry);
   }
 
   async componentDidMount() {
