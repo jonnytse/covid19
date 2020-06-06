@@ -8,7 +8,7 @@ class Country extends Component {
     render() {
         return (
             <div className={styles.country}>
-
+                
             </div>
         )
     }
