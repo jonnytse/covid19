@@ -1,0 +1,16 @@
+.countryList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.countryCard {
+    border: 1px solid black;
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+
+

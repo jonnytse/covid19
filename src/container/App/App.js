@@ -33,7 +33,7 @@ class App extends Component {
     this.setState({ countries: data.Countries });
     console.log(this.state.countries);
 
-    // //this targets the specific data points from within the countries array and console logs
+    // //this targets the specific data points from within the countries array in line 9 and console logs
     // for (let i = 0; i < data.Countries.length; i++) {
     //   console.log(
     //     data.Countries[i].Country,
@@ -53,9 +53,12 @@ class App extends Component {
 
           {/* this outputs/displays the country list to the brower, straight from the countries array in line 9 */}
           {/* { this.state.countries.map((country) => {
-          return <p key={country.CountryCode}>{ country.Country }</p> */}
+          return (
+            <p key={country.CountryCode}>{ country.Country }</p>
+          ) */}
 
-        { this.state.countries.map((country) => {
+        {/* this outputs/displays the country list and specified data to the browser, from countries array in line 9 */}
+        {/* { this.state.countries.map((country) => {
             return (
               <div className={styles.countryCard} key={country.CountryCode}>
                 <h2>{ country.Country }</h2>
@@ -65,8 +68,7 @@ class App extends Component {
               </div>
             )
           })
-        }
-        {/* <h1>This is an H1 inside the App container</h1> */}
+        } */}
       </div>
     );
   }
