@@ -30,7 +30,10 @@ class App extends Component {
     const data = await api_call.json();
     // console.log(data); //thisis an object
     // console.log(data.Countries); //this is the array
-    this.setState({ countries: data.Countries });
+    this.setState({ 
+      countries: data.Countries,
+      filteredCountry: data.Countries //this loads ALL the countries and data on initial landing page
+    });
     console.log(this.state.countries);
 
     // //this targets the specific data points from within the countries array in line 9 and console logs
