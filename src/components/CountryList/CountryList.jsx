@@ -5,6 +5,7 @@ import styles from './CountryList.module.scss';
 class CountryList extends Component {
     render() {
         return (
+            //<></> is called a fragment, and allows wrapping more than 1 thing in a return 
             <>
             <p>CountryList component</p>
             <div className={styles.countryList}>
